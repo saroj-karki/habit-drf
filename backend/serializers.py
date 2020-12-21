@@ -9,3 +9,10 @@ class HabitSerializer(ModelSerializer):
     class Meta:
         model = models.Habit
         fields = '__all__'
+
+
+class HabitItemSerializer(ModelSerializer):
+    '''HabitItemSerializer class'''
+    class Meta:
+        model = models.HabitItem
+        fields = '__all__'
