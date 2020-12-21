@@ -4,7 +4,7 @@ from django.db import models
 
 class Habit(models.Model):
     '''Stores habit information'''
-    name = models.CharField(max_length=256, primary_key=True)
+    name = models.CharField(max_length=256)
 
     def __str__(self):
         return self.name
