@@ -56,7 +56,7 @@ def habit_update(request, primary_key):
 def habit_delete(request, primary_key):
     '''Updates habit object'''
     try:
-        habit_obj = models.Habit.objects.get(id=primary_key).delete()
+        models.Habit.objects.get(id=primary_key).delete()
         return Response(status=200)
     except models.Habit.DoesNotExist as exception:
         raise NotFound() from exception

@@ -11,7 +11,7 @@ class Habit(models.Model):
 
 class HabitItem(models.Model):
     '''Stores habit item information'''
-    habit = models.ForeignKey(Habit, on_delete=models.CASCADE)
+    habit = models.ForeignKey(Habit, on_delete=models.PROTECT)
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
