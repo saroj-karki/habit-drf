@@ -48,3 +48,13 @@ def habit_update(request, primary_key):
         serializer.save()
         return Response(status=200)
     return Response(serializer.errors, status=400)
+
+
+@api_view(['DELETE'])
+def habit_delete(request, primary_key):
+    '''Updates habit object'''
+    try:
+        habit_obj = models.Habit.objects.get(id=primary_key).delete()
+        return Response(status=200)
+    except models.Habit.DoesNotExist as exception:
+        raise NotFound() from exception
